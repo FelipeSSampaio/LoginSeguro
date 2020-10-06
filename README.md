@@ -9,7 +9,7 @@ Projeto Spring Boot que usa Spring Security, BootStrap, Thymeleaf, Lombok e H2.
 - [X] Controle de acesso com users in memory
 
 Versão 2
-- [ ] Acesso controle de acesso via JPA
+- [ ] Controle de acesso via JPA
 
 ----------------------
 Observações
