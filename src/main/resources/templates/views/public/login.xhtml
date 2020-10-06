@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="/css/login.css" />
+</head>
+<body class="text-center">
+	
+		<form class="form-signin" th:action="@{/login}" method="post">
+			
+			<div th:if="${param.error}">
+				<div class="alert alert-danger" role="alert">
+					<span th:utext="${mensagemErro}"></span>
+				</div>
+			</div>
+			
+			<div th:if="${param.logout}">
+				<div class="alert alert-info" role="alert">
+					<span th:utext="${mensagemLogout}"></span>
+				</div>
+			</div>
+			
+			<div class="p-6">
+				<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+				  <path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+				</svg>
+			</div>
+			<HR />		
+			 
+			<input 
+				type="text" id="inputMatricula" name="username" class="form-control"
+				placeholder="Matrícula" required autofocus autocomplete="off">
+						
+			<input
+				type="password" id="password" name="password" class="form-control"
+				placeholder="Senha" required autocomplete="off">
+			
+			<button class="btn btn-lg btn-login btn-block" type="submit">Entrar</button>			
+			
+			
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			
+			<HR />
+			<p class="mt-5 mb-3 text-muted">©2020</p>
+		</form>
+		
+		
+</body>
+</html>

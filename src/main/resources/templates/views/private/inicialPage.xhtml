@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Página Inicial</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="/css/paginaInicial.css" />
+</head>
+<body class="text-center mt-5">
+	
+	<div class="container">
+		<p class="m-auto">Essa é a página inicial.
+		Bem vindo, <span th:utext="${usuarioLogadoNome}"></span>!</p>
+		
+		<HR />
+		<a class="btn btn-lg btn-info" href="/logout">Desconectar</a>
+	</div>
+	
+</body>
+</html>
