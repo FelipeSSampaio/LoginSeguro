@@ -18,3 +18,6 @@ Os usuários estão definidos em memória nessa primeira versão e podem ser enc
 São eles (user/pass):
 - admin/admin
 - gestor/gestor
+
+Na tela de login temos uma proteção do próprio Spring Security para ataques CRSF (Cross-Site Request Forgery).
+Mais sobre o ataque CSRF: https://owasp.org/www-community/attacks/csrf
