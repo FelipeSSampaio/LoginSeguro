@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<title>Página Inicial</title>
 	<meta charset="utf-8">
@@ -7,11 +8,28 @@
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.2/css/bootstrap.min.css}" />
 	<link rel="stylesheet" href="/css/paginaInicial.css" />
 </head>
-<body class="text-center mt-5">
+<body class="text-center">
 	
-	<div class="container">
-		<p class="m-auto">Essa é a página inicial.
-		Bem vindo, <span th:utext="${usuarioLogadoNome}"></span>!</p>
+	<nav class="navbar navbar-dark" style="background:#7497ac;">
+		<ul class="navbar-nav mr-auto">
+	    	<li class="nav-item active">
+	    		<a class="navbar-brand mb-0 h1" href="#">Home <span class="sr-only">(current)</span></a>
+	    	</li>
+		</ul>
+	</nav>
+	
+	<div class="container conteudo-inicial">
+		
+		<p>Bem vindo, <span th:utext="${usuarioLogadoNome}"></span>!</p>
+		<p class="m-auto">Essa é a página inicial.</p>
+		
+		<div class="mt-3 alert alert-warning" sec:authorize="hasRole('ADMIN')">
+			Se você for um Admin, verá isso!
+		</div>
+		
+		<div class="mt-3 alert alert-warning" sec:authorize="hasRole('GESTOR')">
+			Se você for um Gestor, verá isso!
+		</div>
 		
 		<HR />
 		<a class="btn btn-lg btn-info" href="/logout">Desconectar</a>
